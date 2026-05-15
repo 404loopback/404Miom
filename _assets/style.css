@@ -83,14 +83,20 @@ body {
     margin: 0 auto;
 }
 .hero-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
     margin-bottom: 2rem;
 }
 .hero-nav .logo {
     height: 1.6rem;
+}
+
+/* Keep the site logo pinned to the top-left corner on all pages. */
+.hero-nav > a:first-child,
+.recipe-nav > a:first-child,
+.category-nav > a:first-child {
+    position: fixed;
+    top: 0.75rem;
+    left: 1rem;
+    z-index: 1000;
 }
 .hero h1 {
     font-size: 3.2rem;
@@ -316,8 +322,8 @@ body {
     align-items: center;
     gap: 0.4em;
     padding: 1.2rem 1.5rem 0;
-    max-width: none;
-    margin: 0;
+    max-width: 50em;
+    margin: 0 auto;
     font-size: 0.78em;
     font-weight: 600;
     text-transform: uppercase;
