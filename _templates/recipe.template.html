@@ -2,19 +2,21 @@
 <html lang="$lang$">
 <head>
     ${head.partial.html()}
-    <title>$title$ – $if(index_title)$$index_title$ – $endif$nyum</title>
+    <title>$title$ – $if(index_title)$$index_title$$endif$</title>
 </head>
 <body>
     <main class="recipe">
+        <nav class="recipe-nav">
+            <a href="index.html"><img class="logo" src="assets/logo.svg" alt="404Cookbook"></a>
+            <i>⟩</i>
+            $if(category)$<a href="${category_faux_urlencoded}.html">$category$</a> <i>⟩</i>$endif$
+            <span>$title$</span>
+        </nav>
         <header>
-            <div class="name">
-                <nav>
-                    <a href="index.html"><img class="logo" src="assets/logo.svg"></a>
-                    <i>⟩</i>
-                    $if(category)$<a href="${category_faux_urlencoded}.html">$category$</a> <i>⟩</i>$endif$
-                </nav>
-                <h1><span>$title$$if(favorite)$<sup>★</sup>$endif$</span> $if(original_title)$<em>$original_title$</em>$endif$</h1>
-            </div>
+            <h1>
+                <span>$title$$if(favorite)$<sup>★</sup>$endif$</span>
+                $if(original_title)$<em>$original_title$</em>$endif$
+            </h1>
             <ul>
                 $if(size)$
                 <li><img src="assets/tabler-icons/tabler-icon-tools-kitchen-2.svg"> $size$</li>
@@ -80,9 +82,7 @@
                 $endif$
                 <img src="$image$">
                 $if(image_attribution)$
-                    <div class="attribution">
-                        $image_attribution$
-                    </div>
+                    <div class="attribution">$image_attribution$</div>
                 $endif$
                 $if(image_source)$
                     </a>
