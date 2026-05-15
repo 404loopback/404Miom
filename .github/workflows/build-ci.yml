@@ -1,8 +1,12 @@
 name: Build and Deploy
 on:
   push:
-      branches:
-        - main
+    branches:
+      - main
+
+permissions:
+  contents: write  # Add this to allow writing to gh-pages branch
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -24,5 +28,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: gh-pages  # The branch the action should deploy to. Has to be specified in the repo's settings.
-          folder: _site     # The folder the action should deploy from.
+          branch: gh-pages
+          folder: _site
