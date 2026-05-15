@@ -83,6 +83,10 @@ body {
     margin: 0 auto;
 }
 .hero-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
     margin-bottom: 2rem;
 }
 .hero-nav .logo {
@@ -312,8 +316,8 @@ body {
     align-items: center;
     gap: 0.4em;
     padding: 1.2rem 1.5rem 0;
-    max-width: 50em;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     font-size: 0.78em;
     font-weight: 600;
     text-transform: uppercase;
